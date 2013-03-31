@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>RSpec Formatter Documentation with instant stack traces upon failure - Programifications</title>
+  <meta name="author" content="Derrick Camerino">
+
+  
+  <meta name="description" content="The documentation rspec formatter is nice to read, but the bad thing about it is that when a failure occurs,
+it doesn&#8217;t show a stack trace &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="programifications.com/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Programifications" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Programifications</a></h1>
+  
+    <h2>A mashup of technical quirks</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:programifications.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">RSpec Formatter Documentation With Instant Stack Traces Upon Failure</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-05T01:49:00-08:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The documentation rspec formatter is nice to read, but the bad thing about it is that when a failure occurs,
+it doesn&#8217;t show a stack trace until the end of the test run. If you have a long running test suite, you might want to look
+into the first few failures you encounter while the test suite finishes running.</p>
+
+<p>With this simple formatter, it accomplishes exactly that.</p>
+
+<div><script src='https://gist.github.com/2571615.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<p>Now when the test suite runs, the stack trace gets printed right away upon failures.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle exec rspec spec/models/player_spec.rb
+</span><span class='line'>
+</span><span class='line'>Player
+</span><span class='line'>  #next
+</span><span class='line'>    in the main stream
+</span><span class='line'>      should return the next song
+</span><span class='line'>      should decrement play count if the song was skipped
+</span><span class='line'>      playing the first song
+</span><span class='line'>        should fetch and return the first song (FAILED - 1)
+</span><span class='line'>  1) Player#next in the main stream playing the first song should fetch and return the first song
+</span><span class='line'>     Failure/Error: fail
+</span><span class='line'>     RuntimeError:
+</span><span class='line'>     # ./spec/models/player_spec.rb:24:in `block (5 levels) in &lt;top (required)&gt;'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:48:in `instance_eval'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:48:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:107:in `with_around_hooks'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:45:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:294:in `block in run_examples'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:290:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:290:in `run_examples'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:262:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `block (2 levels) in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/reporter.rb:12:in `report'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:21:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:80:in `run_in_process'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:69:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:11:in `block in autorun'
+</span><span class='line'>        should increment play count and track listen for the current user
+</span><span class='line'>      attempting to play a post with an error
+</span><span class='line'>        should mark a song as erroneous
+</span><span class='line'>      going back a song then going forward
+</span><span class='line'>        should play the next song that it once played before
+</span><span class='line'>  #previous
+</span><span class='line'>    in the main stream
+</span><span class='line'>      should return the previous song
+</span><span class='line'>      should increment play count and track listen for the current user
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Derrick Camerino</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-05T01:49:00-08:00" pubdate data-updated="true">Feb 5<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rspec/'>rspec</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="programifications.com/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure/" data-via="robustdj" data-counturl="programifications.com/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/06/04/introducing-the-autosuggest-rb-gem/" title="Previous Post: Introducing the autosuggest-rb gem">&laquo; Introducing the autosuggest-rb gem</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/22/tar-and-untar/" title="Next Post: Using tar for Compression and Extraction">Using tar for Compression and Extraction &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/22/tar-and-untar/">Using tar for Compression and Extraction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure/">RSpec Formatter Documentation with instant stack traces upon failure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/04/introducing-the-autosuggest-rb-gem/">Introducing the autosuggest-rb gem</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/29/rails-3-cheat-sheet/">Rails 3 Cheat Sheet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/">Encapsulating Application Config Variables in a YAML File</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/robustdj">@robustdj</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'robustdj',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derrick Camerino -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

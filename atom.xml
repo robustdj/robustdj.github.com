@@ -4,7 +4,7 @@
   <title><![CDATA[Programifications]]></title>
   <link href="programifications.com/atom.xml" rel="self"/>
   <link href="programifications.com/"/>
-  <updated>2013-03-31T01:44:03-07:00</updated>
+  <updated>2013-03-31T09:42:16-07:00</updated>
   <id>programifications.com/</id>
   <author>
     <name><![CDATA[Derrick Camerino]]></name>
@@ -29,6 +29,122 @@
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>tar cvf name_of_tar.tar.bz2 file1 file2
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RSpec Formatter Documentation with instant stack traces upon failure]]></title>
+    <link href="programifications.com/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure/"/>
+    <updated>2012-02-05T01:49:00-08:00</updated>
+    <id>programifications.com/blog/2012/02/05/rspec-formatter-documentation-with-instant-stack-traces-upon-failure</id>
+    <content type="html"><![CDATA[<p>The documentation rspec formatter is nice to read, but the bad thing about it is that when a failure occurs,
+it doesn&#8217;t show a stack trace until the end of the test run. If you have a long running test suite, you might want to look
+into the first few failures you encounter while the test suite finishes running.</p>
+
+<p>With this simple formatter, it accomplishes exactly that.</p>
+
+<div><script src='https://gist.github.com/2571615.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<p>Now when the test suite runs, the stack trace gets printed right away upon failures.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle exec rspec spec/models/player_spec.rb
+</span><span class='line'>
+</span><span class='line'>Player
+</span><span class='line'>  #next
+</span><span class='line'>    in the main stream
+</span><span class='line'>      should return the next song
+</span><span class='line'>      should decrement play count if the song was skipped
+</span><span class='line'>      playing the first song
+</span><span class='line'>        should fetch and return the first song (FAILED - 1)
+</span><span class='line'>  1) Player#next in the main stream playing the first song should fetch and return the first song
+</span><span class='line'>     Failure/Error: fail
+</span><span class='line'>     RuntimeError:
+</span><span class='line'>     # ./spec/models/player_spec.rb:24:in `block (5 levels) in &lt;top (required)&gt;'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:48:in `instance_eval'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:48:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:107:in `with_around_hooks'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example.rb:45:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:294:in `block in run_examples'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:290:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:290:in `run_examples'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:262:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/example_group.rb:263:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `block (2 levels) in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `map'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:24:in `block in run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/reporter.rb:12:in `report'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/command_line.rb:21:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:80:in `run_in_process'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:69:in `run'
+</span><span class='line'>     # /Users/derrick/.rvm/gems/ruby-1.9.2-p0@player/gems/rspec-core-2.6.4/lib/rspec/core/runner.rb:11:in `block in autorun'
+</span><span class='line'>        should increment play count and track listen for the current user
+</span><span class='line'>      attempting to play a post with an error
+</span><span class='line'>        should mark a song as erroneous
+</span><span class='line'>      going back a song then going forward
+</span><span class='line'>        should play the next song that it once played before
+</span><span class='line'>  #previous
+</span><span class='line'>    in the main stream
+</span><span class='line'>      should return the previous song
+</span><span class='line'>      should increment play count and track listen for the current user
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
