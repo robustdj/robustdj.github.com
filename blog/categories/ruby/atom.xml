@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | robustdj.github.com]]></title>
+  <link href="http://localhost:9292/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://localhost:9292/"/>
+  <updated>2013-03-31T00:04:36-07:00</updated>
+  <id>http://localhost:9292/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Encapsulating Application Config Variables in a YAML File]]></title>
+    <link href="http://localhost:9292/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/"/>
+    <updated>2010-12-13T23:41:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file</id>
+    <content type="html"><![CDATA[<p>Having different configurations for different environments can get messy especially as your project grows. Environment files
+start to get long and switching between all the different files becomes a hassle. One technique I like is to encapsulate all
+of the configuration variables in a YAML file and then loading it up into a global hash during initialization.</p>
+
+<p>I recently dealt with a case using paperclip and had different settings depending on the environment. On production servers
+we wanted to use s3 for storage and locally we wanted to use the filesystem. At first we set up constants (to hold paperclip
+settings) in each of our environment files. So we had something like this in each of our environment(<code>test.rb</code>,
+<code>development.rb</code>, <code>production.rb</code>, etc) files:</p>
+
+<p><code>ruby
+PAPERCLIP_STORAGE_OPTIONS = {
+  :storage =&gt; :s3,
+  :s3_credentials =&gt; "#{Rails.root}/config/s3.yml",
+  :styles =&gt; { :original =&gt; "800x600&gt;", :medium =&gt; "300x300#", :thumb =&gt; "100x100#"
+  :path =&gt; "/user_images/:id/:style/:filename",
+  :convert_options =&gt; { :all =&gt; "-strip" }
+}
+</code></p>
+
+<p>In translating it to YAML (<code>config/config.yml</code> in my case), it looked like this:</p>
+
+<p>```yaml
+paperclip_storage_options: &amp;paperclip
+  styles:</p>
+
+<pre><code>original: "800x600&gt;"
+medium: "300x300#"
+thumb: "100x100#"
+</code></pre>
+
+<p>  path: ":rails_root/public/user_images/:id/:style/:filename"
+  convert_options:</p>
+
+<pre><code>all: "-strip"
+</code></pre>
+
+<p>defaults: &amp;defaults
+  paperclip_storage_options:</p>
+
+<pre><code>&lt;&lt;: *paperclip
+</code></pre>
+
+<p>deployed_defaults: &amp;deployed_defaults
+  &lt;&lt;: *defaults
+  paperclip_storage_options:</p>
+
+<pre><code>&lt;&lt;: *paperclip
+storage: "s3"
+s3_credentials: "&lt;%= RAILS_ROOT %&gt;/config/s3.yml"
+</code></pre>
+
+<p>development:
+  &lt;&lt;: *defaults</p>
+
+<p>test:
+  &lt;&lt;: *defaults</p>
+
+<p>qa:
+  &lt;&lt;: *deployed_defaults</p>
+
+<p>production:
+  &lt;&lt;: *deployed_defaults
+```</p>
+
+<p>And so now each environment can have its own configurations and it’s nicely encapsulated in one file. You may notice that we
+have embedded ruby in the YAML file. We just have to feed it into ERB when we load the YAML. Let’s take a look at
+<code>config/initializers/config.rb</code>:</p>
+
+<p><code>ruby
+APP_CONFIG = YAML.load(ERB.new(File.read("#{Rails.root}/config/config.yml")).result)[Rails.env].recursive_symbolize_keys
+</code>
+You can actually ignore the recursive_symbolize_keys, as I only had to do that since paperclip only takes symbolized
+arguments. While this snippet of code isn’t the prettiest, it works well and enables global config encapsulation. First
+it’s reading the YAML file, interpreting the ruby code, converting it into a hash, and then finally storing it into a
+constant.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,101 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>robustdj.github.com</title>
-  <meta name="author" content="Derrick Camerino">
-
-  
-  <meta name="description" content="Envy Labs just released some Rails 3 cheat sheets to aid the API usage of several components. The pdf can be found
-here. ROUTING API Basic Routing 1 &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://localhost:9292">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="robustdj.github.com" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">robustdj.github.com</a></h1>
-  
-    <h2>A mashup of technical quirks</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:localhost:9292" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[robustdj.github.com]]></title>
+  <link href="http://localhost:9292/atom.xml" rel="self"/>
+  <link href="http://localhost:9292/"/>
+  <updated>2013-03-31T00:04:36-07:00</updated>
+  <id>http://localhost:9292/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/29/rails-3-cheat-sheet/">Rails 3 Cheat Sheet</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2010-12-29T23:45:00-08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Envy Labs just released some Rails 3 cheat sheets to aid the API usage of several components. The pdf can be found
+  <entry>
+    <title type="html"><![CDATA[Rails 3 Cheat Sheet]]></title>
+    <link href="http://localhost:9292/blog/2010/12/29/rails-3-cheat-sheet/"/>
+    <updated>2010-12-29T23:45:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/29/rails-3-cheat-sheet</id>
+    <content type="html"><![CDATA[<p>Envy Labs just released some Rails 3 cheat sheets to aid the API usage of several components. The pdf can be found
 <a href="http://blog.envylabs.com/post/29044764623/rails-3-cheat-sheets">here</a>.</p>
 
 <h3>ROUTING API</h3>
@@ -1010,42 +933,15 @@ Deploying your application</li>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/">Encapsulating Application Config Variables in a YAML File</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-13T23:41:00-08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Having different configurations for different environments can get messy especially as your project grows. Environment files
+  <entry>
+    <title type="html"><![CDATA[Encapsulating Application Config Variables in a YAML File]]></title>
+    <link href="http://localhost:9292/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/"/>
+    <updated>2010-12-13T23:41:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file</id>
+    <content type="html"><![CDATA[<p>Having different configurations for different environments can get messy especially as your project grows. Environment files
 start to get long and switching between all the different files becomes a hassle. One technique I like is to encapsulate all
 of the configuration variables in a YAML file and then loading it up into a global hash during initialization.</p>
 
@@ -1151,42 +1047,15 @@ have embedded ruby in the YAML file. We just have to feed it into ERB when we lo
 arguments. While this snippet of code isn’t the prettiest, it works well and enables global config encapsulation. First
 it’s reading the YAML file, interpreting the ruby code, converting it into a hash, and then finally storing it into a
 constant.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/13/hash-number-recursive-symbolize-keys/">Hash#recursive_symbolize_keys</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-13T23:38:00-08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Surprisingly there isn’t a <code>Hash#recursive_symbolize_keys</code> method so here’s code to accomplish that:</p>
+  <entry>
+    <title type="html"><![CDATA[Hash#recursive_symbolize_keys]]></title>
+    <link href="http://localhost:9292/blog/2010/12/13/hash-number-recursive-symbolize-keys/"/>
+    <updated>2010-12-13T23:38:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/13/hash-number-recursive-symbolize-keys</id>
+    <content type="html"><![CDATA[<p>Surprisingly there isn’t a <code>Hash#recursive_symbolize_keys</code> method so here’s code to accomplish that:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1209,42 +1078,15 @@ constant.</p>
 sort of nested config hash.</p>
 
 <p>Credits to: <a href="http://grosser.it/2009/04/14/recursive-symbolize_keys/">http://grosser.it/2009/04/14/recursive-symbolize_keys/</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/11/using-bundler-with-capistrano/">Using Bundler With Capistrano</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-11T23:37:00-08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>To make capistrano build your gems with bundler you can use the following code snippet:</p>
+  <entry>
+    <title type="html"><![CDATA[Using Bundler with Capistrano]]></title>
+    <link href="http://localhost:9292/blog/2010/12/11/using-bundler-with-capistrano/"/>
+    <updated>2010-12-11T23:37:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/11/using-bundler-with-capistrano</id>
+    <content type="html"><![CDATA[<p>To make capistrano build your gems with bundler you can use the following code snippet:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1268,42 +1110,15 @@ sort of nested config hash.</p>
 
 
 <p>Of course, this is assuming that you already have bundler installed on your remote server.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/06/sunspot-solr-on-rails-3/">Sunspot (Solr) on Rails 3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-06T23:30:00-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Sunspot is a ruby driver for <a href="http://lucene.apache.org/solr/">Solr</a> and is pretty easy to integrate into rails using
+  <entry>
+    <title type="html"><![CDATA[Sunspot (Solr) on Rails 3]]></title>
+    <link href="http://localhost:9292/blog/2010/12/06/sunspot-solr-on-rails-3/"/>
+    <updated>2010-12-06T23:30:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/06/sunspot-solr-on-rails-3</id>
+    <content type="html"><![CDATA[<p>Sunspot is a ruby driver for <a href="http://lucene.apache.org/solr/">Solr</a> and is pretty easy to integrate into rails using
 <a href="https://github.com/outoftime/sunspot_rails">sunspot_rails</a>.</p>
 
 <h2>Installation</h2>
@@ -1440,42 +1255,15 @@ acceptable, but efficient. Below are specs for testing that a provider can be fo
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/06/using-rvmrc/">Using .rvmrc</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-06T23:27:00-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you’re not already using <a href="https://rvm.io/">RVM</a>, I’d highly recommend it as it makes it easier to manage different versions of ruby. You can
+  <entry>
+    <title type="html"><![CDATA[Using .rvmrc]]></title>
+    <link href="http://localhost:9292/blog/2010/12/06/using-rvmrc/"/>
+    <updated>2010-12-06T23:27:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/06/using-rvmrc</id>
+    <content type="html"><![CDATA[<p>If you’re not already using <a href="https://rvm.io/">RVM</a>, I’d highly recommend it as it makes it easier to manage different versions of ruby. You can
 have different projects running on different versions of ruby and switch rubies with ease. One way to make this easier is to
 make use of the .rvmrc file. It will automatically switch to the ruby version that your project is running on when you cd
 into it.</p>
@@ -1513,42 +1301,15 @@ into it.</p>
 <p>Notice that it is using the gemset donut. Gemsets are basically compartmentalized ruby setups. Gems installed in this gemset
 will be separated from other projects (assuming they use different gemsets). You can read more about it
 <a href="https://rvm.io/gemsets/">here</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/05/loading-and-dumping-a-mysql-database/">Loading and Dumping a MySQL Database</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-05T23:25:00-08:00" pubdate data-updated="true">Dec 5<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You can dump the database into a file using:</p>
+  <entry>
+    <title type="html"><![CDATA[Loading and Dumping a MySQL Database]]></title>
+    <link href="http://localhost:9292/blog/2010/12/05/loading-and-dumping-a-mysql-database/"/>
+    <updated>2010-12-05T23:25:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/05/loading-and-dumping-a-mysql-database</id>
+    <content type="html"><![CDATA[<p>You can dump the database into a file using:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mysqldump -h hostname -u user --password=password databasename &gt; filename</span></code></pre></td></tr></table></div></figure>
@@ -1561,42 +1322,15 @@ will be separated from other projects (assuming they use different gemsets). You
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/03/large-numbers-in-ruby/">Large Numbers in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-03T23:23:00-08:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When dealing with large numbers you can use an underscore (in place of a comma) to make the numbers more
+  <entry>
+    <title type="html"><![CDATA[Large Numbers in Ruby]]></title>
+    <link href="http://localhost:9292/blog/2010/12/03/large-numbers-in-ruby/"/>
+    <updated>2010-12-03T23:23:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/12/03/large-numbers-in-ruby</id>
+    <content type="html"><![CDATA[<p>When dealing with large numbers you can use an underscore (in place of a comma) to make the numbers more
 readable and easier to write.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1607,42 +1341,15 @@ readable and easier to write.</p>
 
 
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/20/difference-between-include-and-extend-in-ruby/">Difference Between Include and Extend in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-20T23:17:00-08:00" pubdate data-updated="true">Nov 20<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A common thing to do in ruby is to share functionality among classes. Since ruby doesn’t support multiple inheritance, we
+  <entry>
+    <title type="html"><![CDATA[Difference Between Include and Extend in Ruby]]></title>
+    <link href="http://localhost:9292/blog/2010/11/20/difference-between-include-and-extend-in-ruby/"/>
+    <updated>2010-11-20T23:17:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/11/20/difference-between-include-and-extend-in-ruby</id>
+    <content type="html"><![CDATA[<p>A common thing to do in ruby is to share functionality among classes. Since ruby doesn’t support multiple inheritance, we
 simply import code by mixing in modules. So instead of classes having a crazy inheritance tree, they can have includes
 and/or extends at the top of the class. But what is the difference between include and extend?</p>
 
@@ -1724,42 +1431,15 @@ instances of a class, whereas extend mixes functionality into a class itself.</p
 <li><a href="http://rubyquicktips.com/post/1133877859/include-vs-extend">Include vs Extend by Ruby Quicktips</a></li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/17/caching-with-instance-variables/">Caching With Instance Variables</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-17T23:13:00-08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A performance trick that I use a lot, especially in models, is memoizing methods that are expensive. Usually
+  <entry>
+    <title type="html"><![CDATA[Caching with Instance Variables]]></title>
+    <link href="http://localhost:9292/blog/2010/11/17/caching-with-instance-variables/"/>
+    <updated>2010-11-17T23:13:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/11/17/caching-with-instance-variables</id>
+    <content type="html"><![CDATA[<p>A performance trick that I use a lot, especially in models, is memoizing methods that are expensive. Usually
 these are methods that hit the database, make external API calls, involve longs loops, etc. Suppose we have a
 model Song that has a genre column in the database and a method jazz that queries for all songs that have the
 genre <code>jazz</code>. The model would look something like this:</p>
@@ -1831,115 +1511,186 @@ time and will slow down performance.</p>
 
 
 
-</div>
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Enumberable#group_by]]></title>
+    <link href="http://localhost:9292/blog/2010/11/07/enumberable-number-group-by/"/>
+    <updated>2010-11-07T23:09:00-08:00</updated>
+    <id>http://localhost:9292/blog/2010/11/07/enumberable-number-group-by</id>
+    <content type="html"><![CDATA[<p>So I have another boy on the way and I was trying to think up of names so I created a ruby script to pick a
+random name out of a file beginning with a letter that you provide as an argument. So you&#8217;d call the script like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby boy_name.rb <span class="nv">s</span>
+</span><span class='line'><span class="o">=</span>&gt; Sylen
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># using ruby 1.8.7</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;USAGE: ruby boy_name.rb &lt;letter&gt;&quot;</span>
+</span><span class='line'>  <span class="nb">exit</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;boy_names.txt&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">names</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">group_by</span><span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="nb">name</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'><span class="n">selected_names</span> <span class="o">=</span> <span class="n">names</span><span class="o">[</span><span class="no">ARGV</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">capitalize</span><span class="o">]</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">selected_names</span><span class="o">[</span><span class="nb">rand</span><span class="p">(</span><span class="n">selected_names</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What&#8217;s cool about it is this line</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">names</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">group_by</span><span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="nb">name</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>Enumberable#group_by</code> will group elements in an array by the result of the block passed in. In this case, we&#8217;re grouping by
+the first letter.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="sx">%w{apple banana cucumber}</span><span class="o">.</span><span class="n">group_by</span><span class="p">{</span><span class="o">|</span><span class="n">fruit</span><span class="o">|</span> <span class="n">fruit</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="c1">#&lt;OrderedHash {&quot;a&quot;=&gt;[&quot;apple&quot;], &quot;b&quot;=&gt;[&quot;banana&quot;], &quot;c&quot;=&gt;[&quot;cucumber&quot;]}&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
+  <entry>
+    <title type="html"><![CDATA[Deleting Tags with Git]]></title>
+    <link href="http://localhost:9292/blog/2010/11/06/deleting-tags-with-git/"/>
+    <updated>2010-11-06T23:07:00-07:00</updated>
+    <id>http://localhost:9292/blog/2010/11/06/deleting-tags-with-git</id>
+    <content type="html"><![CDATA[<p>You can list tags by running this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git tag</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
+<p>Suppose we see a tag called v1.0.1 that we want to remove. We’d simply remove it like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git tag -d v1.0.1
+</span><span class='line'>git push origin :refs/tags/v1.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The first line will remove the tag locally and the second line will remove the remote tag.</p>
+]]></content>
+  </entry>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
+  <entry>
+    <title type="html"><![CDATA[For Loops in the Terminal]]></title>
+    <link href="http://localhost:9292/blog/2010/11/05/for-loops-in-the-terminal/"/>
+    <updated>2010-11-05T23:05:00-07:00</updated>
+    <id>http://localhost:9292/blog/2010/11/05/for-loops-in-the-terminal</id>
+    <content type="html"><![CDATA[<p>Recently I&#8217;ve had to retrieve information from a set of remote servers. Using the for loop in the terminal,
+I was able to get all the information I needed in one line which was very convenient. I used the following
+code snippet:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for i in 1 2 3 4 5 6 7 8; do echo "search$i"; ssh root@search$i 'ls -alhrt /ip/sphinx_index/production'; done</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2010/12/29/rails-3-cheat-sheet/">Rails 3 Cheat Sheet</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/">Encapsulating Application Config Variables in a YAML File</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/12/13/hash-number-recursive-symbolize-keys/">Hash#recursive_symbolize_keys</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/12/11/using-bundler-with-capistrano/">Using Bundler with Capistrano</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/12/06/sunspot-solr-on-rails-3/">Sunspot (Solr) on Rails 3</a>
-      </li>
-    
-  </ul>
-</section>
+  <entry>
+    <title type="html"><![CDATA[Enable Logging to Rails Console]]></title>
+    <link href="http://localhost:9292/blog/2010/10/09/enable-logging-to-rails-console/"/>
+    <updated>2010-10-09T23:02:00-07:00</updated>
+    <id>http://localhost:9292/blog/2010/10/09/enable-logging-to-rails-console</id>
+    <content type="html"><![CDATA[<p>To have the rails log output to the console you can add this to your <code>~/.irbrc</code> file:</p>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;logger&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="no">ENV</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="s1">&#39;RAILS_ENV&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="no">Object</span><span class="o">.</span><span class="n">const_defined?</span><span class="p">(</span><span class="s1">&#39;RAILS_DEFAULT_LOGGER&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1"># for rails 2</span>
+</span><span class='line'>  <span class="no">RAILS_DEFAULT_LOGGER</span> <span class="o">=</span> <span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span>
+</span><span class='line'><span class="k">elsif</span> <span class="n">defined?</span><span class="p">(</span><span class="no">Rails</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1"># for rails 3</span>
+</span><span class='line'>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This only enables the log on the machine you’re currently on. If you want to enable logging to the console as a project
+wide feature so that anyone who checks out the project and runs the console also gets logging, then you can put this in
+your <code>environment.rb</code> file (or an environment config file like <code>development.rb</code>):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">if</span> <span class="s2">&quot;irb&quot;</span> <span class="o">==</span> <span class="vg">$0</span>
+</span><span class='line'>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
-  <a href="https://github.com/robustdj">@robustdj</a> on GitHub
+  <entry>
+    <title type="html"><![CDATA[Deleting Branches with Git]]></title>
+    <link href="http://localhost:9292/blog/2010/10/03/deleting-branches-with-git/"/>
+    <updated>2010-10-03T22:50:00-07:00</updated>
+    <id>http://localhost:9292/blog/2010/10/03/deleting-branches-with-git</id>
+    <content type="html"><![CDATA[<p>Suppose we have a remote and local branch called foo. To delete it locally, just run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch -D foo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can verify that it has been deleted by listing your local branches. To do that, run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To delete the remote branch run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push origin :foo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To list all branches (including remotes) run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch -a</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'robustdj',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Derrick Camerino -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>
