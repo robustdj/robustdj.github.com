@@ -4,6 +4,9 @@ title: "Using .rvmrc"
 date: 2010-12-06 23:27
 comments: true
 categories: 
+  - rails
+  - ruby
+  - rvm
 ---
 
 If you’re not already using [RVM](https://rvm.io/), I’d highly recommend it as it makes it easier to manage different versions of ruby. You can

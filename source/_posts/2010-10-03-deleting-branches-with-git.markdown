@@ -4,6 +4,7 @@ title: "Deleting Branches with Git"
 date: 2010-10-03 22:50
 comments: true
 categories: 
+  - git
 ---
 
 Suppose we have a remote and local branch called foo. To delete it locally, just run:

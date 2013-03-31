@@ -4,6 +4,10 @@ title: "Rails 3 Cheat Sheet"
 date: 2010-12-29 23:45
 comments: true
 categories: 
+  - bundler
+  - rails
+  - routing
+  - ruby
 ---
 
 Envy Labs just released some Rails 3 cheat sheets to aid the API usage of several components. The pdf can be found

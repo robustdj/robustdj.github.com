@@ -4,6 +4,7 @@ title: "Deleting Tags with Git"
 date: 2010-11-06 23:07
 comments: true
 categories: 
+  - git
 ---
 
 You can list tags by running this:

@@ -4,6 +4,8 @@ title: "Hash#recursive_symbolize_keys"
 date: 2010-12-13 23:38
 comments: true
 categories: 
+  - rails
+  - ruby
 ---
 
 Surprisingly there isn’t a `Hash#recursive_symbolize_keys` method so here’s code to accomplish that:

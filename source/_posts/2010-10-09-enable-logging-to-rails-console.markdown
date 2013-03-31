@@ -4,6 +4,8 @@ title: "Enable Logging to Rails Console"
 date: 2010-10-09 23:02
 comments: true
 categories: 
+  - ruby
+  - rails
 ---
 
 To have the rails log output to the console you can add this to your `~/.irbrc` file:

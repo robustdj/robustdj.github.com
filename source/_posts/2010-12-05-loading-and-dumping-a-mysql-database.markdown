@@ -4,6 +4,7 @@ title: "Loading and Dumping a MySQL Database"
 date: 2010-12-05 23:25
 comments: true
 categories: 
+  - mysql
 ---
 
 You can dump the database into a file using:

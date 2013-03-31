@@ -4,6 +4,9 @@ title: "Sunspot (Solr) on Rails 3"
 date: 2010-12-06 23:30
 comments: true
 categories: 
+  - rails
+  - ruby
+  - solr
 ---
 
 Sunspot is a ruby driver for [Solr](http://lucene.apache.org/solr/) and is pretty easy to integrate into rails using

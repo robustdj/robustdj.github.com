@@ -4,6 +4,10 @@ title: "Caching with Instance Variables"
 date: 2010-11-17 23:13
 comments: true
 categories: 
+  - caching
+  - performance
+  - rails
+  - ruby
 ---
 
 A performance trick that I use a lot, especially in models, is memoizing methods that are expensive. Usually

@@ -4,6 +4,7 @@ title: "Difference Between Include and Extend in Ruby"
 date: 2010-11-20 23:17
 comments: true
 categories: 
+  - ruby
 ---
 
 A common thing to do in ruby is to share functionality among classes. Since ruby doesn’t support multiple inheritance, we

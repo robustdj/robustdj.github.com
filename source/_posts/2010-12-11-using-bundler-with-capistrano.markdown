@@ -4,6 +4,10 @@ title: "Using Bundler with Capistrano"
 date: 2010-12-11 23:37
 comments: true
 categories: 
+  - bundler
+  - capistrano
+  - rails
+  - ruby
 ---
 
 To make capistrano build your gems with bundler you can use the following code snippet:

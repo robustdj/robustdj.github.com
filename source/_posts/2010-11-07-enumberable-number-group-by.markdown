@@ -4,6 +4,7 @@ title: "Enumberable#group_by"
 date: 2010-11-07 23:09
 comments: true
 categories: 
+  - ruby
 ---
 
 So I have another boy on the way and I was trying to think up of names so I created a ruby script to pick a

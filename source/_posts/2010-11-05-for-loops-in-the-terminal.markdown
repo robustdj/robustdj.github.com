@@ -4,6 +4,7 @@ title: "For Loops in the Terminal"
 date: 2010-11-05 23:05
 comments: true
 categories: 
+  - bash
 ---
 
 Recently I've had to retrieve information from a set of remote servers. Using the for loop in the terminal,
