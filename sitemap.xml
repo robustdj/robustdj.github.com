@@ -2,78 +2,78 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://localhost:9292/blog/2010/10/03/deleting-branches-with-git/</loc>
-        <lastmod>2013-03-30T23:10:44-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/10/09/enable-logging-to-rails-console/</loc>
-        <lastmod>2013-03-30T23:10:40-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/11/05/for-loops-in-the-terminal/</loc>
-        <lastmod>2013-03-30T23:10:28-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/11/06/deleting-tags-with-git/</loc>
-        <lastmod>2013-03-30T23:08:37-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/11/07/enumberable-number-group-by/</loc>
-        <lastmod>2013-03-30T23:13:17-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/11/17/caching-with-instance-variables/</loc>
-        <lastmod>2013-03-30T23:16:50-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://localhost:9292/blog/2010/11/20/difference-between-include-and-extend-in-ruby/
         </loc>
-        <lastmod>2013-03-30T23:22:44-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/03/large-numbers-in-ruby/</loc>
-        <lastmod>2013-03-30T23:24:49-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/05/loading-and-dumping-a-mysql-database/</loc>
-        <lastmod>2013-03-30T23:26:42-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/06/using-rvmrc/</loc>
-        <lastmod>2013-03-30T23:29:57-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/06/sunspot-solr-on-rails-3/</loc>
-        <lastmod>2013-03-30T23:36:40-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/11/using-bundler-with-capistrano/</loc>
-        <lastmod>2013-03-30T23:38:27-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/13/hash-number-recursive-symbolize-keys/</loc>
-        <lastmod>2013-03-30T23:40:23-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://localhost:9292/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/
         </loc>
-        <lastmod>2013-03-30T23:44:50-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/2010/12/29/rails-3-cheat-sheet/</loc>
-        <lastmod>2013-03-31T00:01:25-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/blog/archives/</loc>
-        <lastmod>2013-03-31T00:01:25-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/</loc>
-        <lastmod>2013-03-31T00:01:25-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://localhost:9292/robots.txt</loc>
-        <lastmod>2013-03-30T22:36:41-07:00</lastmod>
+        <lastmod>2013-03-31T00:55:53-07:00</lastmod>
     </url>
 </urlset>
