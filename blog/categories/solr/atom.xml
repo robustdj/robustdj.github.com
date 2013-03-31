@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: solr | Programifications]]></title>
+  <link href="programifications.com/blog/categories/solr/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sunspot (Solr) on Rails 3]]></title>
+    <link href="programifications.com/blog/2010/12/06/sunspot-solr-on-rails-3/"/>
+    <updated>2010-12-06T23:30:00-08:00</updated>
+    <id>programifications.com/blog/2010/12/06/sunspot-solr-on-rails-3</id>
+    <content type="html"><![CDATA[<p>Sunspot is a ruby driver for <a href="http://lucene.apache.org/solr/">Solr</a> and is pretty easy to integrate into rails using
+<a href="https://github.com/outoftime/sunspot_rails">sunspot_rails</a>.</p>
+
+<h2>Installation</h2>
+
+<p>First add it to your Gemfile:</p>
+
+<p><code>ruby
+gem "sunspot_rails", "1.2.rc4"
+</code></p>
+
+<p>Update your bundle:</p>
+
+<p><code>ruby
+bundle install
+</code></p>
+
+<p>Run this task to create your <code>sunspot.yml</code> file:</p>
+
+<p><code>
+rails g sunspot_rails:install
+</code></p>
+
+<p>To start the sunspot server run:</p>
+
+<p><code>
+rake sunspot:solr:start RAILS_ENV=development
+</code></p>
+
+<p>You probably don’t need the rails env variable set but I usually do it to be explicit. The first time you run this command,
+it will create a <code>solr/ directory</code> in your Rails root. This contains Solr’s configuration, as well as the actual data files
+for the Solr index. You’ll probably want to add <code>solr/data</code> to your <code>.gitignore</code>.</p>
+
+<h2>Setting up your Models</h2>
+
+<p>There are two ways to setup your models for indexing. First way (and more appropriate for rails) is to use the ‘searchable’ macro. Suppose we have a model called Provider with first_name, middle_name, and last_name columns in the database. We can setup those fields to indexing with the following:</p>
+
+<p>```ruby
+class Provider &lt; ActiveRecord::Base
+  searchable do</p>
+
+<pre><code>text :first_name :middle_name, :last_name
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>The second way is the following:</p>
+
+<p><code>ruby
+Sunspot.setup Provider do
+  text :first_name, :middle_name, :last_name
+end
+</code></p>
+
+<p>This code can be stored at the end of the model (outside of the class), or in an initializer, though it isn’t too pretty.
+For more information on setting up classes with search and indexing, check out this <a href="https://github.com/outoftime/sunspot">page</a></p>
+
+<h2>Don’t Forget to Reindex</h2>
+
+<p>To reindex, run the following rake task:</p>
+
+<p><code>ruby
+rake sunspot:reindex RAILS_ENV=development
+</code></p>
+
+<p>You can also reindex in the console by running:</p>
+
+<p><code>ruby
+Provider.reindex
+</code></p>
+
+<h2>Testing Provider search with RSpec</h2>
+
+<p>Normally I use <code>before(:each)</code> blocks to set up my data, but setting up search data is a use case for using a <code>before(:all)</code>
+block. With search, we’re not manipulating the data, so having test data setup before all search specs is not only
+acceptable, but efficient. Below are specs for testing that a provider can be found by all parts of his/her name:</p>
+
+<p>```ruby
+describe "search" do
+  before(:all) do</p>
+
+<pre><code>@provider = Factory(:provider, :first_name =&gt; "Dexter", :middle_name =&gt; "Berry", :last_name =&gt; "Pilsner")
+Provider.reindex
+</code></pre>
+
+<p>  end</p>
+
+<p>  it "should find a provider by first name" do</p>
+
+<pre><code>Provider.search{ fulltext 'dexter' }.results.should == [@provider]
+</code></pre>
+
+<p>  end</p>
+
+<p>  it "should find a provider by middle name" do</p>
+
+<pre><code>Provider.search{ fulltext 'berry' }.results.should == [@provider]
+</code></pre>
+
+<p>  end</p>
+
+<p>  it "should find a provider by first name" do</p>
+
+<pre><code>Provider.search{ fulltext 'pilsner' }.results.should == [@provider]
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>One gotcha. Don’t forget to start your sunspot server in the test environment:</p>
+
+<p><code>
+rake sunspot:solr:start RAILS_ENV=test
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

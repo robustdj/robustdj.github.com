@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Programifications]]></title>
+  <link href="programifications.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Deleting Tags with Git]]></title>
+    <link href="programifications.com/blog/2010/11/06/deleting-tags-with-git/"/>
+    <updated>2010-11-06T23:07:00-07:00</updated>
+    <id>programifications.com/blog/2010/11/06/deleting-tags-with-git</id>
+    <content type="html"><![CDATA[<p>You can list tags by running this:</p>
+
+<p><code>
+git tag
+</code></p>
+
+<p>Suppose we see a tag called v1.0.1 that we want to remove. We’d simply remove it like this:</p>
+
+<p><code>
+git tag -d v1.0.1
+git push origin :refs/tags/v1.0.1
+</code></p>
+
+<p>The first line will remove the tag locally and the second line will remove the remote tag.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deleting Branches with Git]]></title>
+    <link href="programifications.com/blog/2010/10/03/deleting-branches-with-git/"/>
+    <updated>2010-10-03T22:50:00-07:00</updated>
+    <id>programifications.com/blog/2010/10/03/deleting-branches-with-git</id>
+    <content type="html"><![CDATA[<p>Suppose we have a remote and local branch called foo. To delete it locally, just run:</p>
+
+<p><code>
+git branch -D foo
+</code></p>
+
+<p>You can verify that it has been deleted by listing your local branches. To do that, run:</p>
+
+<p><code>
+git branch
+</code></p>
+
+<p>To delete the remote branch run:</p>
+
+<p><code>
+git push origin :foo
+</code></p>
+
+<p>To list all branches (including remotes) run:</p>
+
+<p><code>
+git branch -a
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rvm | Programifications]]></title>
+  <link href="programifications.com/blog/categories/rvm/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using .rvmrc]]></title>
+    <link href="programifications.com/blog/2010/12/06/using-rvmrc/"/>
+    <updated>2010-12-06T23:27:00-08:00</updated>
+    <id>programifications.com/blog/2010/12/06/using-rvmrc</id>
+    <content type="html"><![CDATA[<p>If you’re not already using <a href="https://rvm.io/">RVM</a>, I’d highly recommend it as it makes it easier to manage different versions of ruby. You can
+have different projects running on different versions of ruby and switch rubies with ease. One way to make this easier is to
+make use of the .rvmrc file. It will automatically switch to the ruby version that your project is running on when you cd
+into it.</p>
+
+<p>Suppose we have a rails project called donut running on ruby 1.9.2.</p>
+
+<p><code>
+cd donut
+</code></p>
+
+<p>Once in the rails root of the project, create a file called <code>.rvmrc</code> and add this:</p>
+
+<p><code>
+rvm use ruby-1.9.2-p0@donut --create
+</code></p>
+
+<p>To list known rubies you can use this:</p>
+
+<p><code>
+rvm list known
+</code></p>
+
+<p>Now when you cd into the directory, it will automatically use ruby 1.9.2.</p>
+
+<p>```
+cd ..
+cd donut</p>
+
+<p>info: Using ruby 1.9.2 p0 with gemset donut
+```</p>
+
+<p>Notice that it is using the gemset donut. Gemsets are basically compartmentalized ruby setups. Gems installed in this gemset
+will be separated from other projects (assuming they use different gemsets). You can read more about it
+<a href="https://rvm.io/gemsets/">here</a></p>
+]]></content>
+  </entry>
+  
+</feed>

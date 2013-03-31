@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://localhost:9292/sitemap.xml 
+Sitemap: programifications.com/sitemap.xml 

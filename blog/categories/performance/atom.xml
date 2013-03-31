@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: performance | Programifications]]></title>
+  <link href="programifications.com/blog/categories/performance/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Caching with Instance Variables]]></title>
+    <link href="programifications.com/blog/2010/11/17/caching-with-instance-variables/"/>
+    <updated>2010-11-17T23:13:00-08:00</updated>
+    <id>programifications.com/blog/2010/11/17/caching-with-instance-variables</id>
+    <content type="html"><![CDATA[<p>A performance trick that I use a lot, especially in models, is memoizing methods that are expensive. Usually
+these are methods that hit the database, make external API calls, involve longs loops, etc. Suppose we have a
+model Song that has a genre column in the database and a method jazz that queries for all songs that have the
+genre <code>jazz</code>. The model would look something like this:</p>
+
+<p>```ruby
+class Song &lt; ActiveRecord::Base
+  def jazz</p>
+
+<pre><code>all(:conditions =&gt; {:genre =&gt; "jazz"})
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Now this looks all fine and dandy but what if that method gets called several times? It will cause a query every
+time and will slow down performance.</p>
+
+<h2>Memoization to the Rescue</h2>
+
+<p>We can trade space for time by saving the results in an instance variable. So the first time the method is called, a query to the database will be executed. However all subsequent calls to the method will not query the database and will just return the saved result. That would look like this:</p>
+
+<p>```ruby
+class Song &lt; ActiveRecord::Base
+  def jazz</p>
+
+<pre><code>@jazz ||= all(:conditions =&gt; {:genre =&gt; "jazz"})
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<h2>Clearing the cache!</h2>
+
+<p>A common problem with caching is forgetting to clear it. Whenever a new song gets added, deleted, or modified, we’re going to need to clear the <code>@jazz</code> instance variable so that when the jazz method is called, it will get those new songs. Easy enough, we can just add callbacks to clear the cache after saving. Check it out:</p>
+
+<p>```ruby
+class Song &lt; ActiveRecord::Base
+  after_save :clear_memoization
+  after_destroy :clear_memoization</p>
+
+<p>  def jazz</p>
+
+<pre><code>@jazz ||= all(:conditions =&gt; {:genre =&gt; "jazz"})
+</code></pre>
+
+<p>  end</p>
+
+<p>  private
+  def clear_memoization</p>
+
+<pre><code>@jazz = nil
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

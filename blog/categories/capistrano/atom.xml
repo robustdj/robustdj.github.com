@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: capistrano | Programifications]]></title>
+  <link href="programifications.com/blog/categories/capistrano/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Bundler with Capistrano]]></title>
+    <link href="programifications.com/blog/2010/12/11/using-bundler-with-capistrano/"/>
+    <updated>2010-12-11T23:37:00-08:00</updated>
+    <id>programifications.com/blog/2010/12/11/using-bundler-with-capistrano</id>
+    <content type="html"><![CDATA[<p>To make capistrano build your gems with bundler you can use the following code snippet:</p>
+
+<p>```ruby
+namespace :bundle do
+  task :install, :roles => :app do</p>
+
+<pre><code>shared_dir = File.join(shared_path, 'bundle')
+run "mkdir -p #{shared_dir}"
+run "cd #{release_path} &amp;&amp; bundle install --without development test --path #{shared_dir}"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>after 'deploy:update_code', 'bundle:install'
+```</p>
+
+<p>Of course, this is assuming that you already have bundler installed on your remote server.</p>
+]]></content>
+  </entry>
+  
+</feed>

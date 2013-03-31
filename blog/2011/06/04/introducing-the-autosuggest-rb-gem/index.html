@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Introducing the autosuggest-rb gem - Programifications</title>
+  <meta name="author" content="Derrick Camerino">
+
+  
+  <meta name="description" content="I recently released a gem that wraps the jQuery autoSuggest Plugin. It provides helpers that make it easy to use in Rails 3.
+It supports ActiveRecord &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="programifications.com/blog/2011/06/04/introducing-the-autosuggest-rb-gem">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Programifications" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Programifications</a></h1>
+  
+    <h2>A mashup of technical quirks</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:programifications.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Introducing the Autosuggest-rb Gem</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-04T00:24:00-07:00" pubdate data-updated="true">Jun 4<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently released a gem that wraps the jQuery autoSuggest Plugin. It provides helpers that make it easy to use in Rails 3.
+It supports ActiveRecord, Mongoid, and MongoMapper. The code is hosted on github. Feel free to fork and improve it!</p>
+
+<h3>INSTALLING</h3>
+
+<p>Include the gem on your Gemfile</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;autosuggest-rb&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Install it</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Run the generator</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rails</span> <span class="n">generate</span> <span class="n">autosuggest</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And include <code>jquery.autoSuggest.js</code> and <code>autoSuggest.css</code> on your layouts or add them to your assets file</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">javascript_include_tag</span> <span class="s2">&quot;jquery.autoSuggest.js&quot;</span>
+</span><span class='line'><span class="n">stylesheet_link_tag</span> <span class="s2">&quot;autoSuggest.css&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>USAGE</h3>
+
+<h2>Model Example</h2>
+
+<p>Assuming you have a Tag model:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Tag</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">create_table</span> <span class="ss">:tags</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">t</span><span class="o">.</span><span class="n">string</span> <span class="ss">:name</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Controller</h2>
+
+<p>Your controller will need an action to respond to the autosuggest textfield. To add it to your controller call the
+autosuggest method and pass it the name of the model and column name as in the following example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">RecipesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="n">autosuggest</span> <span class="ss">:tag</span><span class="p">,</span> <span class="ss">:name</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will create a <code>autosuggest_tag_name</code> action. You then need to add a route for that action</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">resources</span> <span class="ss">:recipes</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">get</span> <span class="ss">:autosuggest_tag_name</span><span class="p">,</span> <span class="ss">:on</span> <span class="o">=&gt;</span> <span class="ss">:collection</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>From the view you can create an autosuggest field with the autosuggest_field_tag helper</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># autosuggest_field_tag(name, value, source_path, options={})</span>
+</span><span class='line'><span class="c1"># @param [String] name - name you want to use for the text field</span>
+</span><span class='line'><span class="c1"># @param [String] value - value to show up in the field by default</span>
+</span><span class='line'><span class="c1"># @param [String] source_path - url to the autosuggest path</span>
+</span><span class='line'><span class="c1"># @param [Hash] options - options that you can normally pass into text_field_tag</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">form_tag</span><span class="p">(</span><span class="s1">&#39;/some_path&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">autosuggest_field_tag</span> <span class="s2">&quot;tags&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">autosuggest_tag_name_recipes_path</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can also use the <code>autosuggest_field</code> helper</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">form_for</span> <span class="vi">@recipe</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">f</span><span class="o">.</span><span class="n">autosuggest_field</span> <span class="ss">:tags</span><span class="p">,</span> <span class="n">autosuggest_tag_name_recipes_path</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By default, autosuggest only queries the db for existing entries, but if you want to be able to create new ones, just pass these options:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">autosuggest_field</span> <span class="ss">:tags</span><span class="p">,</span> <span class="n">autosuggest_tag_name_recipes_path</span><span class="p">,</span> <span class="ss">:autosuggest_options</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">&quot;newValuesInputName&quot;</span> <span class="o">=&gt;</span> <span class="n">recipes</span><span class="o">[</span><span class="n">new_tags</span><span class="o">]</span><span class="s2">&quot; }</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can do whatever you want from the controller using <code>params[:recipes][:new_tags]</code></p>
+
+<p>These are the default options:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;queryParam&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;selectedItemProp&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;searchObjProps&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;neverSubmit&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;asHtmlName&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">object_name</span><span class="si">}</span><span class="s2">[set_</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2">]&quot;</span> <span class="c1"># recipes[set_tags] in our example</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But you can pass options in by using the <code>autosuggest_options</code> param</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">autosuggest_field</span> <span class="ss">:tags</span><span class="p">,</span> <span class="n">autosuggest_tag_name_recipes_path</span><span class="p">,</span> <span class="ss">:autosuggest_options</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s2">&quot;neverSubmit&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;true&quot;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here are the other options you can pass in:</p>
+
+<p><code>asHtmlName</code>: string (false by default) – Enables you to specify your own custom name that will be attributed to the text
+field</p>
+
+<p><code>newValuesInputName</code>: string (false by default) – Enables you to define a name for a hidden field that will catch new names
+that don’t match any in the db</p>
+
+<p><code>asHtmlID</code>: string (false by default) – Enables you to specify your own custom ID that will be appended to the top level
+AutoSuggest UL element’s ID name. Otherwise it will default to using a random ID. Example: id=“CUSTOM_ID”. This is also
+applies to the hidden input filed that holds all of the selected values. Example: id=“as-values-CUSTOM_ID”</p>
+
+<p><code>startText</code>: string (“Enter Name Here” by default) – Text to display when the AutoSuggest input field is empty.</p>
+
+<p><code>emptyText</code>: string (“No Results” by default) – Text to display when their are no search results.</p>
+
+<p><code>preFill</code>: object or string (empty object by default) – Enables you to pre-fill the AutoSuggest box with selections when the
+page is first loaded. You can pass in a comma separated list of values (a string), or an object. When using a string, each
+value is used as both the display text on the selected item and for it’s value. When using an object, the options
+selectedItemProp will define the object property to use for the display text and selectedValuesProp will define the object
+property to use for the value for the selected item. Note: you must setup your preFill object in that format. A preFill
+object can look just like the example objects laid out above.</p>
+
+<p><code>limitText</code>: string (“No More Selections Are Allowed” by default) – Text to display when the number of selections has reached
+it’s limit.</p>
+
+<p><code>selectedItemProp</code>: string (“value” by default) – Name of object property to use as the display text for each chosen item.</p>
+
+<p><code>selectedValuesProp</code>: string (“value” by default) – Name of object property to use as the value for each chosen item. This
+value will be stored into the hidden input field.</p>
+
+<p><code>searchObjProps</code>: string (“value” by default) – Comma separated list of object property names. The values in these objects
+properties will be used as the text to perform the search on.</p>
+
+<p><code>queryParam</code>: string (“q” by default) – The name of the param that will hold the search string value in the AJAX request.</p>
+
+<p><code>retrieveLimit</code>: number (false by default) – If set to a number, it will add a ‘&amp;limit=’ param to the AJAX request. It also
+limits the number of search results allowed to be displayed in the results dropdown box.</p>
+
+<p><code>extraParams</code>: string (“” by default) – This will be added onto the end of the AJAX request URL. Make sure you add an ‘&amp;’
+before each param.</p>
+
+<p><code>matchCase</code>: true or false (false by default) – Make the search case sensitive when set to true.</p>
+
+<p><code>minChars</code>: number (1 by default) – Minimum number of characters that must be entered into the AutoSuggest input field before
+the search begins.</p>
+
+<p><code>keyDelay</code>: number (400 by default) – Number of milliseconds to delay after a keydown on the AutoSuggest input field and
+before search is started.</p>
+
+<p><code>resultsHighlight</code>: true or false (true by default) – Option to choose whether or not to highlight the matched text in each
+result item.</p>
+
+<p><code>neverSubmit</code>: true or false (false by default) – If set to true this option will never allow the ‘return’ key to submit the
+form that AutoSuggest is a part of.</p>
+
+<p><code>selectionLimit</code>: number (false by default) – Limits the number of selections that are allowed to be made to the number
+specified.</p>
+
+<p><code>showResultList</code>: true or false (true by default) – If set to false, the Results Dropdown List will never be shown at any
+time.</p>
+
+<p><code>start</code>: callback function – Custom function that is run only once on each AutoSuggest field when the code is first applied.</p>
+
+<p><code>selectionClick</code>: callback function – Custom function that is run when a previously chosen item is clicked. The item that is
+clicked is passed into this callback function as ‘elem’.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Example</span><span class="p">:</span> <span class="ss">selectionClick</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">elem</span><span class="p">){</span> <span class="n">elem</span><span class="o">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="err">“</span><span class="n">slow</span><span class="err">”</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">33</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>selectionAdded</code>: callback function – Custom function that is run when a selection is made by choosing one from the Results
+dropdown, or by using the tab/comma keys to add one. The selection item is passed into this callback function as ‘elem’.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Example</span><span class="p">:</span> <span class="ss">selectionAdded</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">elem</span><span class="p">){</span> <span class="n">elem</span><span class="o">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="err">“</span><span class="n">slow</span><span class="err">”</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">33</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>selectionRemoved</code>: callback function – Custom function that is run when a selection removed from the AutoSuggest by using
+the delete key or by clicking the “x” inside the selection. The selection item is passed into this callback function as
+‘elem’.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Example</span><span class="p">:</span> <span class="ss">selectionRemoved</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">elem</span><span class="p">){</span> <span class="n">elem</span><span class="o">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="err">“</span><span class="n">fast</span><span class="err">”</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">function</span><span class="p">(){</span> <span class="n">elem</span><span class="o">.</span><span class="n">remove</span><span class="p">();</span> <span class="p">});</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>formatList</code>: callback function – Custom function that is run after all the data has been retrieved and before the results
+are put into the suggestion results list. This is here so you can modify what &amp; how things show up in the suggestion results
+list.</p>
+
+<p><code>beforeRetrieve</code>: callback function – Custom function that is run right before the AJAX request is made, or before the local
+objected is searched. This is used to modify the search string before it is processed. So if a user entered “jim” into the
+AutoSuggest box, you can call this function to prepend their query with “guy_”. Making the final query = “guy_jim”. The
+search query is passed into this function. Example: beforeRetrieve: function(string){ return string; }</p>
+
+<p><code>retrieveComplete</code>: callback function – Custom function that is run after the ajax request has completed. The data object
+MUST be returned if this is used. Example: retrieveComplete: function(data){ return data; }</p>
+
+<p><code>resultClick</code>: callback function – Custom function that is run when a search result item is clicked. The data from the item
+that is clicked is passed into this callback function as ‘data’.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Example</span><span class="p">:</span> <span class="ss">resultClick</span><span class="p">:</span> <span class="n">function</span><span class="p">(</span><span class="n">data</span><span class="p">){</span> <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>resultsComplete</code>: callback function – Custom function that is run when the suggestion results dropdown list is made visible.
+Will run after every search query.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Derrick Camerino</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-04T00:24:00-07:00" pubdate data-updated="true">Jun 4<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="programifications.com/blog/2011/06/04/introducing-the-autosuggest-rb-gem/" data-via="robustdj" data-counturl="programifications.com/blog/2011/06/04/introducing-the-autosuggest-rb-gem/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/12/29/rails-3-cheat-sheet/" title="Previous Post: Rails 3 Cheat Sheet">&laquo; Rails 3 Cheat Sheet</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/22/tar-and-untar/" title="Next Post: Using tar for Compression and Extraction">Using tar for Compression and Extraction &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/22/tar-and-untar/">Using tar for Compression and Extraction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/04/introducing-the-autosuggest-rb-gem/">Introducing the autosuggest-rb gem</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/29/rails-3-cheat-sheet/">Rails 3 Cheat Sheet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/13/encapsulating-application-config-variables-in-a-yaml-file/">Encapsulating Application Config Variables in a YAML File</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/13/hash-number-recursive-symbolize-keys/">Hash#recursive_symbolize_keys</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/robustdj">@robustdj</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'robustdj',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Derrick Camerino -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

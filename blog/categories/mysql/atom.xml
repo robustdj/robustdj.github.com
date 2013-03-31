@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mysql | Programifications]]></title>
+  <link href="programifications.com/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="programifications.com/"/>
+  <updated>2013-03-31T01:44:03-07:00</updated>
+  <id>programifications.com/</id>
+  <author>
+    <name><![CDATA[Derrick Camerino]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Loading and Dumping a MySQL Database]]></title>
+    <link href="programifications.com/blog/2010/12/05/loading-and-dumping-a-mysql-database/"/>
+    <updated>2010-12-05T23:25:00-08:00</updated>
+    <id>programifications.com/blog/2010/12/05/loading-and-dumping-a-mysql-database</id>
+    <content type="html"><![CDATA[<p>You can dump the database into a file using:</p>
+
+<p><code>
+mysqldump -h hostname -u user --password=password databasename &gt; filename
+</code></p>
+
+<p>You can load the dump into the database using:</p>
+
+<p><code>
+mysql -h hostname -u user --password=password databasename &lt; filename
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

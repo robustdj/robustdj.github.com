@@ -5,20 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Using Bundler with Capistrano - Programifications</title>
+  <title>Category: mysql - Programifications</title>
   <meta name="author" content="Derrick Camerino">
 
   
-  <meta name="description" content="To make capistrano build your gems with bundler you can use the following code snippet: 1
-2
-3
-4
-5
-6
-7
-8
-9
-namespace :bundle do task :install, :roles &hellip;">
+  <meta name="description" content="Category: mysql">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -27,7 +18,7 @@ namespace :bundle do task :install, :roles &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="programifications.com/blog/2010/12/11/using-bundler-with-capistrano">
+  <link rel="canonical" href="programifications.comblog/categories/mysql">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Programifications" type="application/atom+xml">
@@ -73,109 +64,35 @@ namespace :bundle do task :install, :roles &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Using Bundler With Capistrano</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-11T23:37:00-08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Mysql</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>To make capistrano build your gems with bundler you can use the following code snippet:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:bundle</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">task</span> <span class="ss">:install</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">shared_dir</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">shared_path</span><span class="p">,</span> <span class="s1">&#39;bundle&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">run</span> <span class="s2">&quot;mkdir -p </span><span class="si">#{</span><span class="n">shared_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>    <span class="n">run</span> <span class="s2">&quot;cd </span><span class="si">#{</span><span class="n">release_path</span><span class="si">}</span><span class="s2"> &amp;&amp; bundle install --without development test --path </span><span class="si">#{</span><span class="n">shared_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">after</span> <span class="s1">&#39;deploy:update_code&#39;</span><span class="p">,</span> <span class="s1">&#39;bundle:install&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
+  
+  <h2>2010</h2>
+
+<article>
+  
+<h1><a href="/blog/2010/12/05/loading-and-dumping-a-mysql-database/">Loading and Dumping a MySQL Database</a></h1>
+<time datetime="2010-12-05T23:25:00-08:00" pubdate><span class='month'>Dec</span> <span class='day'>05</span> <span class='year'>2010</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/mysql/'>mysql</a></span>
+</footer>
 
 
-<p>Of course, this is assuming that you already have bundler installed on your remote server.</p>
+</article>
+
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Derrick Camerino</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-11T23:37:00-08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2010</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/bundler/'>bundler</a>, <a class='category' href='/blog/categories/capistrano/'>capistrano</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="programifications.com/blog/2010/12/11/using-bundler-with-capistrano/" data-via="robustdj" data-counturl="programifications.com/blog/2010/12/11/using-bundler-with-capistrano/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2010/12/06/sunspot-solr-on-rails-3/" title="Previous Post: Sunspot (Solr) on Rails 3">&laquo; Sunspot (Solr) on Rails 3</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2010/12/13/hash-number-recursive-symbolize-keys/" title="Next Post: Hash#recursive_symbolize_keys">Hash#recursive_symbolize_keys &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>
